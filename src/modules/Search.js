@@ -67,7 +67,10 @@ class Search {
       : "<p>No general information match that search.</p>"
   }
   ${combinedResults
-    .map((item) => `<li><a href="${item.link}">${item.title.rendered}</a></li>`)
+    .map(
+      (item) =>
+        `<li><a href="${item.link}">${item.title.rendered}</a> by ${item.authorName}</li>`
+    )
     .join("")}
   ${combinedResults.length ? "</ul>" : ""}
   `);
